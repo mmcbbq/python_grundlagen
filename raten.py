@@ -33,29 +33,14 @@
 #         if ran_zahlen[y] > ran_zahlen[y + 1]:
 #             ran_zahlen[y], ran_zahlen[y + 1] = ran_zahlen[y + 1], ran_zahlen[y]
 #
-import random
+import numpy as np
+liste = []
+for x in range(1, 100000000):
 
-zahl1 = random.randint(1, 10)
-zahl2 = random.randint(1, 10)
-antwort = ''
-zahlenstring = []
-for i in range(10):
-    zahlenstring.append(str(i))
+    liste.append(x)
+np_array = np.array(liste, dtype=np.int64)
+print(np_array.sum())
 
-while antwort != (zahl1 + zahl2):
-    isint = True
-    antwort = input(f'Was ist {zahl1} + {zahl2}? ')
 
-    while isint:
-        for stelle in antwort:
-            if stelle not in zahlenstring:
-                antwort = input('Gib eine Zahl ein!!!')
-                isint = True
-                break
-            else:
-                isint = False
-    antwort = int(antwort)
+print(sum(liste))
 
-    if zahl1 + zahl2 != antwort:
-        print('Falsch')
-print('richtig')
