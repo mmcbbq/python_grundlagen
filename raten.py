@@ -33,11 +33,29 @@
 #         if ran_zahlen[y] > ran_zahlen[y + 1]:
 #             ran_zahlen[y], ran_zahlen[y + 1] = ran_zahlen[y + 1], ran_zahlen[y]
 #
-# print(ran_zahlen)
-summ = 0
+import random
 
-for x in range(1, 101):
-    summ = summ + x
-print(summ)
+zahl1 = random.randint(1, 10)
+zahl2 = random.randint(1, 10)
+antwort = ''
+zahlenstring = []
+for i in range(10):
+    zahlenstring.append(str(i))
 
+while antwort != (zahl1 + zahl2):
+    isint = True
+    antwort = input(f'Was ist {zahl1} + {zahl2}? ')
 
+    while isint:
+        for stelle in antwort:
+            if stelle not in zahlenstring:
+                antwort = input('Gib eine Zahl ein!!!')
+                isint = True
+                break
+            else:
+                isint = False
+    antwort = int(antwort)
+
+    if zahl1 + zahl2 != antwort:
+        print('Falsch')
+print('richtig')
