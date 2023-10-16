@@ -35,12 +35,12 @@
 #
 import numpy as np
 liste = []
-for x in range(1, 100000000):
+for x in range(1, 65537):
 
     liste.append(x)
-np_array = np.array(liste, dtype=np.int64)
+np_array = np.array(liste)
 print(np_array.sum())
-
-
 print(sum(liste))
 
+def halloTest():
+    pass
