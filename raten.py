@@ -42,5 +42,4 @@ np_array = np.array(liste)
 print(np_array.sum())
 print(sum(liste))
 
-def halloTest():
-    pass
+
